@@ -103,3 +103,23 @@ function altPairs(string) {
     console.log(output)
 }
 altPairs("CodingHorror") 
+/*
+Given a string and a non-negative int n, we'll say that the front of the string is the first 3 chars, or whatever is there if the string is less than length 3. Return n copies of the front;
+
+
+frontTimes("Chocolate", 2) → "ChoCho"
+frontTimes("Chocolate", 3) → "ChoChoCho"
+frontTimes("Abc", 3) → "AbcAbcAbc"
+*/
+
+const frontTimes = (string,int) => {
+    let output = ''
+    for (let i = 0; i < int; i++) {
+        output += string.slice(0,3)
+
+    }
+    return output
+}
+console.log(frontTimes("Chocolate", 2))
+
+const frontTimes1 = (string,int) => string.slice(0,3).repeat(int) //

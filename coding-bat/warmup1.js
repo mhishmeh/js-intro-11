@@ -330,3 +330,63 @@ function noTriples(arr) {
 }
 
 console.log(noTriples([1, 1, 2, 2, 1]))
+
+
+/*
+
+Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+
+
+icyHot(120, -1) → true
+icyHot(-1, 120) → true
+icyHot(2, 120) → false
+*/
+
+
+
+function icyHot(num1,num2) {
+    return ((num1 > 100 && num2 < 0) || (num2 > 100 && num1 < 0))
+}
+
+console.log(icyHot(-1, 120))
+
+
+/*
+
+Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
+
+
+mixStart("mix snacks") → true
+mixStart("pix snacks") → true
+mixStart("piz snacks") → false
+
+*/
+
+function mixStart(string) {
+    return /^.ix/.test(string)
+
+}
+
+console.log(mixStart('pix snacks'))  // could also manually check index 1 and 2 for 'ix' because it is harded coded as finding the first three
+
+
+
+/*
+
+Given a string, return a string made of the first 2 chars (if present), however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
+
+
+startOz("ozymandias") → "oz"
+startOz("bzoo") → "z"
+startOz("oxx") → "o"
+
+*/
+
+function startOz(string) {
+    let output = ''
+    if (string[0] === 'o') output += string[0]
+    if (string[1] === 'z') output += string[1]
+    return output
+}
+
+console.log(startOz("ozymandias"))
