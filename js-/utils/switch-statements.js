@@ -1,4 +1,4 @@
-const { getRandomNumber } = require('./utils/MathHelper.js')
+const { getRandomNumber } = require('./MathHelper.js')
 
 
 

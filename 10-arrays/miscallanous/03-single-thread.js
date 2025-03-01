@@ -12,3 +12,10 @@ setTimeout( () => {
 
 
 console.log('Batch-11')
+
+
+
+let arr = [1,2,3,[3,4,5]]
+
+let arr2 = arr
+

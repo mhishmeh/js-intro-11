@@ -390,3 +390,89 @@ function startOz(string) {
 }
 
 console.log(startOz("ozymandias"))
+
+
+
+/*
+
+
+Given 2 int values, return whichever value is nearest to the value 10, or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
+
+
+close10(8, 13) → 8
+close10(13, 8) → 8
+close10(13, 7) → 0
+
+
+*/
+
+function close10(int1,int2) {
+    let value1 = Math.abs(int1 - 10)
+    let value2 = Math.abs(int2 - 10)
+    return value1 < value2 ? int1 : int2
+}
+
+console.log(close10(13, 8))
+
+/*
+
+Given two non-negative int values, return true if they have the same last digit, such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+
+
+lastDigit(7, 17) → true
+lastDigit(6, 17) → false
+lastDigit(3, 113) → true
+
+
+*/
+
+function lastDigit(int1, int2) {
+    return int1 % 10 === int2 % 10
+}
+
+console.log(lastDigit(3, 113))
+
+
+/*
+
+
+Given a string, return a new string where the last 3 chars are now in upper case. If the string has less than 3 chars, uppercase whatever is there. Note that str.toUpperCase() returns the uppercase version of a string.
+
+
+endUp("Hello") → "HeLLO"
+endUp("hi there") → "hi thERE"
+endUp("hi") → "HI"
+*/
+
+function endUp(string) {
+
+    return string.slice(0, -3) + string.slice(-3).toUpperCase()
+}
+
+console.log(endUp("Hi"))
+
+
+/*
+
+
+Given a non-empty string and an int N, return the string made starting with char 0, and then every Nth char of the string. So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+
+
+everyNth("Miracle", 2) → "Mrce"
+everyNth("abcdefg", 2) → "aceg"
+everyNth("abcdefg", 3) → "adg"
+
+*/
+
+function everyNth(string,int) {
+    let output = ''
+for (let i = 0; i < string.length; i += int) {
+    output += string[i] 
+
+}
+return output
+
+}
+
+console.log(everyNth("abcdefg", 2))
+

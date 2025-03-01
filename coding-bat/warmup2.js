@@ -123,3 +123,147 @@ const frontTimes = (string,int) => {
 console.log(frontTimes("Chocolate", 2))
 
 const frontTimes1 = (string,int) => string.slice(0,3).repeat(int) //
+
+
+/*
+
+Given a string and a non-negative int n, return a larger string that is n copies of the original string.
+
+
+stringTimes("Hi", 2) → "HiHi"
+stringTimes("Hi", 3) → "HiHiHi"
+stringTimes("Hi", 1) → "Hi"
+
+*/
+
+
+function stringTimes(string, int) {
+output = ''
+for (let i = 0; i < int; i++) {
+    output += string
+}
+return output
+}
+
+console.log(stringTimes("Hi", 2))
+
+
+
+/*
+
+
+Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+
+
+countXX("abcxx") → 1
+countXX("xxx") → 2
+countXX("xxxx") → 3
+
+*/
+
+function countXXX(string) {
+    let count = 0
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === 'x') {
+            console.log(string[i])
+            count += 1
+
+        }
+        
+    }return count -1
+}
+console.log(countXXX('xxxx'))
+
+
+
+
+/*
+
+Given a string, return a version where all the "x" have been removed. Except an "x" at the very start or end should not be removed.
+
+
+stringX("xxHxix") → "xHix"
+stringX("abxxxcd") → "abcd"
+stringX("xabxxxcdx") → "xabcdx"
+
+*/
+
+function stringX(string) {
+    let beginning =  string[0] === 'x' ? 'x': ''
+   
+     let end =  string.at(-1) === 'x' ? 'x': ''
+    
+    let output = string.replaceAll('x','')
+    return beginning + output + end
+
+}
+
+console.log(stringX('xabxxxcdx'))
+
+
+
+/*
+
+
+Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
+
+
+doubleX("axxbb") → true
+doubleX("axaxax") → false
+doubleX("xxxxx") → true
+
+
+*/
+
+function doubleX(string) {
+    let index = string.indexOf('x')
+    return string[index + 1] === 'x'
+}
+
+console.log(doubleX("axaxax"))
+
+
+/*
+
+
+Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+
+
+stringBits("Hello") → "Hlo"
+stringBits("Hi") → "H"
+stringBits("Heeololeo") → "Hello"
+
+*/
+
+
+const stringBits = string => {
+    let output = ''
+    for (let i = 0; i < string.length; i += 2) {
+        output += string[i]
+
+    }
+    return output
+}
+console.log(stringBits('Heeololeo'))
+
+
+/*
+
+
+Given a non-empty string like "Code" return a string like "CCoCodCode".
+
+
+stringSplosion("Code") → "CCoCodCode"
+stringSplosion("abc") → "aababc"
+stringSplosion("ab") → "aab"
+
+*/
+
+function stringSplosion(string) {
+    output = ''
+    for (i = 0; i < string.length; i++) {
+        output += string.slice(0, i + 1)
+    }
+    return output
+}
+console.log(stringSplosion('Code'))
