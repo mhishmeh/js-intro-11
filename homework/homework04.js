@@ -346,13 +346,22 @@ console.log(`\n--------------- Task Nineteen ---------------\n`);
 
 function getMultipleOf5(num1, num2) {
     let arr = []
-    for (let i = num1; i <= num2; i++) {
-        if (i % 5 === 0) arr.push(i)
+    if (num1 > num2) {
+        for (let i = num1; i >= num2; i--) {
+            if (i % 5 === 0) arr.push(i)
+        }
+    return arr
     }
-return arr
+    else{
+        for (let i = num1; i <= num2; i++) {
+            if (i % 5 === 0) arr.push(i)
+        }
+    return arr
+    }
+
 }
 
-console.log(getMultipleOf5(3,18))
+console.log(getMultipleOf5(23,5))
 
 
 
