@@ -267,3 +267,142 @@ function stringSplosion(string) {
     return output
 }
 console.log(stringSplosion('Code'))
+
+
+/*
+
+Given a string, return the count of the number of times that a substring length 2 appears in the string and also as the last 2 chars of the string, so "hixxxhi" yields 1 (we won't count the end substring).
+
+
+last2("hixxhi") → 1
+last2("xaxxaxaxx") → 1
+last2("axxxaaxx") → 2
+
+*/
+
+
+function last2(string) {
+    let count = 0
+    let lastTwo = string.slice(-2)
+    
+    for (let i = 0; i < string.length; i++) {
+        if (string[i] === lastTwo[0]) {
+            if (string[i + 1] === lastTwo[1]) count++
+        }
+        else {
+            continue
+        }
+    }
+    return count - 1
+
+
+}
+console.log(last2('xaxxaxaxx'))
+
+
+/*
+
+
+Given an array of ints, return the number of 9's in the array.
+
+
+arrayCount9([1, 2, 9]) → 1
+arrayCount9([1, 9, 9]) → 2
+arrayCount9([1, 9, 9, 3, 9]) → 3
+
+*/
+function arrayCount9(arr) {
+    let count = 0
+    for (let number of arr) {
+        if (number === 9) count ++
+    }
+    return count
+}
+
+console.log(arrayCount9([1, 2, 9]))
+
+/*
+
+Given an array of ints, return true if one of the first 4 elements in the array is a 9. The array length may be less than 4.
+
+
+arrayFront9([1, 2, 9, 3, 4]) → true
+arrayFront9([1, 2, 3, 4, 9]) → false
+arrayFront9([1, 2, 3, 4, 5]) → false
+
+*/
+
+function arrayFront9(arr) {
+    let firstFour = arr.slice(0,4) 
+    if (firstFour.includes(9)) return true
+    return false
+}
+
+console.log(arrayFront9([1, 9]))
+
+
+/*
+
+
+Given an array of ints, return true if the sequence of numbers 1, 2, 3 appears in the array somewhere.
+
+
+array123([1, 1, 2, 3, 1]) → true
+array123([1, 1, 2, 4, 1]) → false
+array123([1, 1, 2, 1, 2, 3]) → true
+
+*/
+
+function array123(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 1 && arr[i + 1] === 2 && arr[i + 2] === 3) return true
+
+    }
+    return false
+}
+console.log(array123([1, 1, 2, 3, 1]))
+
+
+
+/*
+
+
+Given an array of ints, return the number of times that two 6's are next to each other in the array. Also count instances where the second "6" is actually a 7.
+
+
+array667([6, 6, 2]) → 1
+array667([6, 6, 2, 6]) → 1
+array667([6, 7, 2, 6]) → 1
+
+*/
+
+function array667(arr) {
+    let count = 0
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 6 && (arr[i + 1] === 6 || arr[i +1] === 7)) count ++
+    }
+    return count
+}
+
+console.log(array667([6, 7, 2, 6,6]))
+
+/*
+
+
+Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array. Return true if the array does not contain any triples.
+
+
+noTriples([1, 1, 2, 2, 1]) → true
+noTriples([1, 1, 2, 2, 2, 1]) → false
+noTriples([1, 1, 1, 2, 2, 2, 1]) → false
+
+*/
+
+const noTriples = arr => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i+1] && arr[i] === arr[i+2]) return false
+    }
+    return true
+}
+
+console.log(noTriples([1, 1, 2, 2, 1]))

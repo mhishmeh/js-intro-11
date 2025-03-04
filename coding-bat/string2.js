@@ -68,3 +68,58 @@ function xyBalance(string) {
 console.log(xyBalance('aaxbby'))
 
 
+
+/*
+
+Given a string and a non-empty word string, return a string made of each char just before and just after every appearance of the word in the string. Ignore cases where there is no char before or after the word, and a char may be included twice if it is between two words.
+
+
+wordEnds("abcXY123XYijk", "XY") → "c13i"
+wordEnds("XY123XY", "XY") → "13"
+wordEnds("XY1XY", "XY") → "11"
+*/
+
+function wordsEnds(string, xy) {
+    let count = 0
+    let output = ''
+    for (let i = 0; i < string.length; i++) {
+        if (count === 2) {
+            if (string[i-3] == 'undefined') output += string[i]
+            else{
+                output += string[i-3] + string[i]
+            count = 0
+            }
+        }
+        if (count === 1) {
+            if (string[i] === 'Y') count += 1
+        } else {
+            count = 0
+        }
+
+        if (string[i] === 'X') count += 1
+    }
+
+    let final = output.replace('undefined','')
+    return final.length === 1 ? final+final : final
+}
+
+
+console.log(wordsEnds("XY123XY", "XY"))
+
+
+/*
+
+
+The web is built with HTML strings like "<i>Yay</i>" which draws Yay as italic text. In this example, the "i" tag makes <i> and </i> which surround the word "Yay". Given tag and word strings, create the HTML string with tags around the word, e.g. "<i>Yay</i>".
+
+
+makeTags("i", "Yay") → "<i>Yay</i>"
+makeTags("i", "Hello") → "<i>Hello</i>"
+makeTags("cite", "Yay") → "<cite>Yay</cite>"
+
+*/
+
+function makeTags(eye,string) {
+    return `<${eye}>${string}</${eye}>`
+}
+console.log(makeTags("i", "Yay"))

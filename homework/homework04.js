@@ -254,7 +254,6 @@ NOTE: Make your code dynamic that works for any array and return -1 if there are
 //
 
 function firstDuplicate(arr) {
-    let duplicates = []
     for (let i = 0; i < arr.length; i++) {
         for (let j = i+1; j <arr.length; j++) {
             if (arr[i] === arr[j]) return arr[i]
@@ -294,7 +293,7 @@ function getDuplicates(arr) {
     return [...set]
 }
 
-console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]))
+console.log(getDuplicates([ 5, -7, -7, 0, 5, 10, 45, -7, 0 ]))
 console.log(getDuplicates(['A', 'foo', '12' , 12, 'bar', 'a', 'a', 'foo' ]))
 
 
@@ -310,9 +309,16 @@ Write a function named as reverseStringWords() which takes a string as an argume
 */
 
 function reverseStringWords(str) {
+    
+    let final = []
      
-     return str.split('').reverse().join('').trim()
+     let arr = str.split(' ').reverse()
+     for (let i = arr.length-1; i >= 0; i--) {
+        final.push(arr[i])
+     }
+     return final
      
+    
 }
 
 console.log(reverseStringWords('hello world'))
