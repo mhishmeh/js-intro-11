@@ -310,13 +310,13 @@ Write a function named as reverseStringWords() which takes a string as an argume
 
 function reverseStringWords(str) {
     
-    let final = []
+    let final = ''
      
      let arr = str.split(' ').reverse()
      for (let i = arr.length-1; i >= 0; i--) {
-        final.push(arr[i])
+        final += arr[i].split('').reverse().join('') + ' '
      }
-     return final
+     return final.trim()
      
     
 }
