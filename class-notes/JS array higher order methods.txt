@@ -1,0 +1,18 @@
+Array Methods:
+
+Higher Order Method/function: it is a method/function that takes another callback function as an argument
+
+callback: it is a function or method passed as an argument to anotehr function
+
+
+
+Functional Programming
+forEach(callback)
+map(callback)
+filter(callback)
+reduce(callback)
+some(callback)
+every(callback)
+find(callback)
+findIndex(callback)
+

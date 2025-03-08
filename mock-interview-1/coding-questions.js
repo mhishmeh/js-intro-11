@@ -10,9 +10,11 @@ Examples: startsVowel("Tech") startsVowel("Apple") startsVowel("abc")
 
 function startsVowel(string) {
     return 'aeiouAEIOU'.includes(string[0])
+
+    
 }
 
-console.log(startsVowel('amoe'))
+console.log(startsVowel(''))
 
 
 console.log(startsVowel('hi'))
@@ -138,4 +140,3 @@ function middle(string) {
 middle('abcde')
 
 
-function startsVowel

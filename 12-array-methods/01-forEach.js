@@ -27,3 +27,18 @@ const names = ['Mariia', 'Alex', 'John', 'Jane', 'Victoria']
 names.forEach((x) => {
     if (x.length === 4) console.log(x)
     })
+
+
+const nums = [5,3,2,1]
+
+let sum = 0
+let product = 1
+const arrMultiplied = []
+
+nums.forEach((x) => {
+sum += x
+product *= x
+arrMultiplied.push(x * 5)
+})
+
+console.log(sum,product,arrMultiplied)
