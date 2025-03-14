@@ -123,3 +123,5 @@ function makeTags(eye,string) {
     return `<${eye}>${string}</${eye}>`
 }
 console.log(makeTags("i", "Yay"))
+
+

@@ -1,0 +1,13 @@
+
+
+
+Errors:
+
+if(websiteLoads) {
+    // show users website
+}
+
+
+else{
+    // show a nice picture with a 404 Not Found message
+}
