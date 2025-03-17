@@ -42,3 +42,4 @@ console.log('4' > '3');
 
 
 console.log(22.245.toFixed(2))
+

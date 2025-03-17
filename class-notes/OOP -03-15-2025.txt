@@ -1,0 +1,27 @@
+OOP intro
+
+
+
+BEFORE ES6::
+//constructor function
+function Phone(brand, color, price) {      //NOTICE THE UPPERCASE
+    this.brand = brand;
+    this.color = color;
+    this.price = price;
+};
+
+
+const phone1 = new Phone('iPhone', 'Purple', 1000);
+
+const phone2 = new Phone('Samsung', 'Blue', 1200);
+
+
+AFTER ES6:
+
+class Phone {
+    constructor(brand, color, price) {
+        this.brand = brand;
+        this.color = color;
+        this.price = price;
+    };
+};
