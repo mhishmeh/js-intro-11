@@ -295,3 +295,18 @@ const mostRepeated = arr => {
 }
 
 console.log(mostRepeated(["pen", "pencil", "pen", "123", "abc", "pen", "pencil"]))
+
+
+
+const greet = function(arr) {
+    return arr.sort()
+  };
+  console.log(greet("John")); // "Hello, John!"
+
+  const omar = arr => {
+    return arr.sort()
+  }
+
+  console.log(omar('Moe'))
+
+

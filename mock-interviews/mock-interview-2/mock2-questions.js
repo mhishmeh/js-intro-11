@@ -219,4 +219,138 @@ NOTE: Ignore case sensitivity.
 
 const countA = str => str.split('').filter((x) => x.toLowerCase() === 'a').length
 
-console.log(countA("TechGlobal is a QA bootcamp"))
+console.log(countA("QA stands for Quality Assurance"))
+
+/*
+
+Write a function named countWords() which takes a string argument and returns the total count of words in the given string when invoked.
+
+*/
+
+
+const countWords = str => str.trim().split(' ').length
+
+
+console.log(countWords("Cypress is an UI automation tool. "))
+
+/*
+
+Write a function named as factorial() which takes a number as an argument and returns the factorial of the number when invoked.
+NOTE: Mathematically, the factorial of a non-negative integer n is defined as:
+n! = n × (n-1) × (n-2) × ... × 2 × 1
+Assume you will not be given a negative number.
+
+*/
+
+const factorial = num => {
+    let factorial = 1
+    for (let i = num; i >= 2; i--) {
+        factorial *= i
+    }
+    return factorial
+}
+
+console.log(factorial(0))
+
+
+/*
+
+Write a function named as count3OrLess() which takes a string word as an argument and returns the count of the words that has 3 characters or less when invoked.
+
+*/
+const count3OrLess = str => {
+    let count = 0
+    const arr = str.trim().split(' ')
+    for (let word of arr) {
+        if (word.length >= 3) count += 1
+    }
+    return count
+}
+
+console.log(count3OrLess("JavaScript is fun"))
+
+
+
+/*
+Remove Extra Spaces
+Write a function named as removeExtraSpaces() which takes a string word as an argument and returns the string back with all extra spaces removed when invoked.
+
+*/
+// hello        world
+const removeExtraSpaces = str => {
+    let trimmedStr = str.trim().replace(/\s+/g, ' ')
+    return trimmedStr
+
+}
+
+console.log(removeExtraSpaces('   hello    world  '))
+
+/*
+
+Write a function named middleInt() which takes three number arguments and return the middle number.
+
+*/
+
+const middleInt = (num1, num2, num3) => {
+
+    const arr = [num1, num2, num3]
+    let max = Math.max(...arr)
+    let min = Math.min(...arr)
+    console.log(min, max)
+    return arr.filter( (x) => x !== max && x !== min)[0]
+
+}
+
+console.log(middleInt(4,5,6))
+
+/*
+
+Write a function named as firstDuplicate() which takes an array argument and returns the first duplicated number in the array when invoked.
+NOTE: Make your code dynamic that works for any array and return -1 if there are no duplicates in the array. For two elements to be considered as duplicated, value and data types of the elements must be same.
+
+*/
+//DO AGAIN
+
+const firstDuplicate = arr => {
+    const seenSet = []
+    const firstSet = []
+   
+    for (let num of arr) {
+        if (firstSet.has(num)) seenSet.add(num)
+            else firstSet.add(num)
+                 
+    }
+
+    return seenSet
+}
+
+
+console.log(firstDuplicate([ 3, 7, 7, 0, 3, 10 ]))
+
+/*
+
+Write a function named as getDuplicates() which takes an array argument and returns all the duplicated elements in the array when invoked.
+NOTE: Make your code dynamic that works for any array and return empty array if there are no duplicates in the array. For two elements to be considered as duplicated, value and data types of the elements must be same.
+
+*/
+
+const getDuplicates = arr => {
+    const seenSet = new Set()
+    const firstSet = new Set()
+   
+    for (let num of arr) {
+        if (firstSet.has(num)) seenSet.add(num)
+            else firstSet.add(num)
+                 
+    }
+
+    return [...seenSet]
+}
+
+console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]))
+
+/*
+
+Write a function named sumOfDigits() which takes a string argument and returns sum of all digits from the original string.
+
+*/
