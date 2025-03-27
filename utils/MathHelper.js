@@ -19,7 +19,6 @@ function isDigit(char) {
     return char.charCodeAt(0) >= 48 && char.charCodeAt(0) <= 57
 }
 
-console.log(isDigit('4'))
 
 function isLetter(char) {
     return /\w/.test(char)
@@ -50,8 +49,8 @@ function isPrime(num) {
     return true
 }
 
-console.log(isVowel('e'))
+
+
 module.exports.getRandomNumber = getRandomNumber;
 module.exports.isPrime = isPrime;
 
-console.log(isPrime(4))

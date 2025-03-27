@@ -1,0 +1,47 @@
+JS is single threaded (multi tasking/ multithreading is not possible.)
+JS is asynchronous 
+
+example:
+
+200 test cases takes 2000 seconds = half an hour to get task done
+
+
+what we want:
+
+Parallel execution -> 3 minutes (for the same 200 test cases)
+
+
+asynchronous:
+
+3 lines of code in a block (one operation won't stop the other operations)
+
+handling asynchrounous code: we need to do this frequently when writing automated scripts because there will be test failures as soem steps will be wait for the previous step to complete.
+
+
+imagine :
+
+test('Test Financing Page header', async ({page}) => {
+    page.goto('carvana.com');
+    page.getByRole('link', {name: 'Financing' }).click();   // all 3 lines of code are asynchronous 
+    expect(page.locator('h2')).toBeVisible();
+})
+
+how can we handle asynchronous code?
+
+1.callbacks (old not preferred)
+2. promises (es6)
+3. async-await (es6)
+
+TEST CASE:
+
+Go to carvana carvana.com
+Click on Financing
+Validate "FIANCING MADE EASY" heading is visible
+
+
+                    Promise States
+                        pending
+                    IS THERE ERROR?
+            YES?                    NO?
+                                    resolved
+            rejected
