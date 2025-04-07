@@ -134,10 +134,10 @@ const getCommons = (str1, str2) => {
     for (let i of str1) {
         if( str2.includes(i) ) output.push(i)
     }
-    return output
+    return [...new Set(output)]
 }
 
-console.log(getCommons( ["Javascript", "is", "fun"], ["Javascript", "C#", "Python"] ))
+console.log(getCommons(  ["Javascript", "C#", "C#"], ["Python", "C#", "C++"]))
 
 
 

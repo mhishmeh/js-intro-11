@@ -354,3 +354,72 @@ console.log(getDuplicates([ 0, -4, -7, 0, 5, 10, 45, -7, 0 ]))
 Write a function named sumOfDigits() which takes a string argument and returns sum of all digits from the original string.
 
 */
+
+
+
+const arrFactorial = arr => {
+    return arr.map((ele) => {
+        
+            let factorial = 1
+            for (let i = ele; i > 1; i--) {
+                factorial *= i
+            }
+            return factorial
+        })
+    }
+
+
+console.log(arrFactorial([]))
+
+
+
+
+
+// SUM OF DIGITS
+
+const sumOfDigits = str => {
+    let sum = 0
+    for (let i of str) {
+        if (/\d/.test(i)) sum += Number(i)
+    }
+    return sum
+}
+console.log(sumOfDigits('jav3as4cript'))
+
+
+
+
+// NO VOWELS !!!
+const noVowel = str => str.replaceAll(/[aeiou]/ig,'')
+
+console.log(noVowel('MOE'))
+
+
+
+// REMOVE DUPLICATES
+
+const removeDuplicates = arr => {
+    return [...new Set(arr)]
+
+}
+console.log(removeDuplicates([1,1,2,2,4,5]))
+
+
+
+// NO ELEMENTS EQUALS 13
+
+const no13 = arr => {
+    return arr.map( (ele) => ele === 13 ? 0 : ele)
+
+}
+
+console.log(no13([13,4,3,5]))
+
+
+
+
+// NO ELEMENTS DIVISIBLE BY 3 AND 5
+
+const no3and5 = arr =>  arr.map( (x) => (x % 3 === 0 && x % 5 === 0) ? 101 : x % 5 === 0 ? 99: x % 3 === 0 ? 100 : x)
+
+console.log(no3and5([3,4,5,11,3]))
