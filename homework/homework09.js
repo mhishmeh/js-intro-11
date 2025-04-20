@@ -134,7 +134,7 @@ const countOccurencesOfCharacter = str => {
 
 
 
-console.log(countOccurencesOfCharacter('www'))
+console.log(countOccurencesOfCharacter('wwwe'))
 
 
 console.log(`\n--------------- Task Six ---------------\n`)
