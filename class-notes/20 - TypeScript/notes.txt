@@ -1,0 +1,8 @@
+TypeScript is a superset of JavaScript.
+It's built on top fo JavaScript by adding type-safety
+
+JavaScript is dynamically-typed
+
+let variable = 'John'
+
+variable = 25

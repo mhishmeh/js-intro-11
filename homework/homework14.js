@@ -99,3 +99,6 @@ console.log(capsOdds(["Jan", "Feb", "Mar", "Apr"]))  // -> ["Jan", "FEB", "Mar",
 console.log(capsOdds(["Apple", "Banana", "123", "456", "Peach", "Kiwi"]))  // -> ["Apple", "BANANA", "123", "456", "Peach", "KIWI"]
 console.log(capsOdds([ ]))  // -> [ ]
 console.log(capsOdds(["John !@#$%", "^&*() Doe"]))  // -> ["John !@#$%", "^&*() DOE"]
+
+
+console.log( typeof (5 + '5'))
